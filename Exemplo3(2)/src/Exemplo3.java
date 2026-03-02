@@ -1,3 +1,6 @@
+
+import java.awt.Color;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -30,8 +33,9 @@ public class Exemplo3 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtIdade = new javax.swing.JTextField();
         btnVerificar = new javax.swing.JButton();
+        lbR = new javax.swing.JLabel();
         lbResposta = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -68,8 +72,16 @@ public class Exemplo3 extends javax.swing.JFrame {
         jLabel3.setText("Digite a idade");
 
         btnVerificar.setText("Verificar");
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificarActionPerformed(evt);
+            }
+        });
 
-        lbResposta.setText("Resposta:");
+        lbR.setText("Resposta:");
+
+        lbResposta.setForeground(new java.awt.Color(0, 51, 255));
+        lbResposta.setText("Resposta");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,8 +92,11 @@ public class Exemplo3 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(btnVerificar)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbResposta))
+                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbResposta)))
                 .addGap(0, 60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,11 +106,13 @@ public class Exemplo3 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(btnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbResposta)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbR)
+                    .addComponent(lbResposta))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -114,13 +131,20 @@ public class Exemplo3 extends javax.swing.JFrame {
         });
 
         btnProcessar.setText("Processar");
+        btnProcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcessarActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Media do Aluno:");
 
         jLabel8.setText("Situação Aluno");
 
+        lbMedia.setForeground(new java.awt.Color(0, 51, 255));
         lbMedia.setText("Media");
 
+        lbSituacao.setForeground(new java.awt.Color(0, 51, 255));
         lbSituacao.setText("situacao");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -208,15 +232,54 @@ public class Exemplo3 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNota1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNota1ActionPerformed
+
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+        // TODO add your handling code here:
+        int idade;
+        
+        idade = Integer.parseInt(txtIdade.getText());
+        
+        if (idade>=18){
+            lbResposta.setText("Você é maior de Idade");
+        }else{
+            lbResposta.setText("Você é menor de idade");
+        }
+        
+    }//GEN-LAST:event_btnVerificarActionPerformed
+
+    private void btnProcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessarActionPerformed
+        // TODO add your handling code here:
+        double n1, n2, media;
+        
+       n1 = Double.parseDouble(txtNota1.getText());
+       n2 = Double.parseDouble(txtNota2.getText());
+       
+       media = (n1 + n2) /2 ;
+       
+       lbMedia.setText(String.format("%.2f", media) );
+       
+       if(media >= 6 ){
+           lbSituacao.setText("Aprovado");
+           lbSituacao.setForeground(Color.blue);
+       }else if (media >=2 ){
+           lbSituacao.setText("Exame");
+           lbSituacao.setForeground(Color.green);
+       }else{
+           lbSituacao.setText("Reprovado");
+           lbSituacao.setForeground(Color.red);
+       }
+    }//GEN-LAST:event_btnProcessarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,10 +330,11 @@ public class Exemplo3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbMedia;
+    private javax.swing.JLabel lbR;
     private javax.swing.JLabel lbResposta;
     private javax.swing.JLabel lbSituacao;
+    private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNota1;
     private javax.swing.JTextField txtNota2;
     // End of variables declaration//GEN-END:variables

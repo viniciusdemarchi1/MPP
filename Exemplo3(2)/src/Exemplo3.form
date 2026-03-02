@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -105,8 +105,12 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="btnVerificar" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="lbResposta" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIdade" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="lbR" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lbResposta" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
               </Group>
@@ -119,11 +123,14 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="txtIdade" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="btnVerificar" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lbResposta" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbR" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbResposta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -140,16 +147,27 @@
             <Property name="text" type="java.lang.String" value="Digite a idade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtIdade">
         </Component>
         <Component class="javax.swing.JButton" name="btnVerificar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Verificar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerificarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbR">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Resposta:"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbResposta">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Resposta:"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Resposta"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -267,6 +285,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Processar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcessarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -280,11 +301,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbMedia">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="33" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Media"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbSituacao">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="33" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="situacao"/>
           </Properties>
         </Component>
