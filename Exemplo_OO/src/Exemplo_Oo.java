@@ -67,8 +67,18 @@ public class Exemplo_Oo extends javax.swing.JFrame {
         });
 
         btnExercicio1.setText("Exercício 1");
+        btnExercicio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExercicio1ActionPerformed(evt);
+            }
+        });
 
         btnExercicio2.setText("Exercício 2");
+        btnExercicio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExercicio2ActionPerformed(evt);
+            }
+        });
 
         btnExercicio3.setText("Exercício 3");
 
@@ -134,6 +144,21 @@ public class Exemplo_Oo extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnExercicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExercicio1ActionPerformed
+        // TODO add your handling code here:
+        Exercicio1 ex = new Exercicio1 (this,true);
+        ex.setVisible(true);
+    }//GEN-LAST:event_btnExercicio1ActionPerformed
+
+    private void btnExercicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExercicio2ActionPerformed
+
+
+        // TODO add your handling code here:
+           Exercicio2 ex = new Exercicio2 (this,true);
+        ex.setVisible(true);
+                                  
+    }//GEN-LAST:event_btnExercicio2ActionPerformed
 
     /**
      * @param args the command line arguments
