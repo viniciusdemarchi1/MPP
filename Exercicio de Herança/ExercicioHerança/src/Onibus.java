@@ -1,14 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-import Veiculo;
-
-/**
- *
- * @author aluno
- */
 public class Onibus extends Veiculo {
+    private int qtdePassageiros;
+
+    public Onibus() {
+        super();
+    }
+
+    public Onibus(String nome, String fabricante, double precoVenda , int qtdePassageiros) {
+        super(nome, fabricante, precoVenda);
+        this.qtdePassageiros = qtdePassageiros;
+    }
+
+    public int getQtdePassageiros() {
+        return qtdePassageiros;
+    }
+
+    public void setQtdePassageiros(int qtdePassageiros) {
+        this.qtdePassageiros = qtdePassageiros;
+    }
+
+    
+    public double calcularIpva(){
+        double ipva = getPrecoVenda() * 1.5;
+        
+        return ipva;
+        
+        
+    }
+    
+    
+    
+    
+    
+    @Override
+    public String toString() {
+        return "Onibus";
+    }
+    
+    
+    
     
 }
